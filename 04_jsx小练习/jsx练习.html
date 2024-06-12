@@ -26,8 +26,9 @@
           <div>
             <h1>前端</h1>
             <ul>
-              <li>vue</li>
-              <li>react</li>
+              {data.map((item, index) => {
+                return <li key={index}>{item}</li>;
+              })}
             </ul>
           </div>
         );
