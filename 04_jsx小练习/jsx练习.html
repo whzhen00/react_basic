@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>1_使用jsx创建虚拟DOM</title>
+  </head>
+
+  <!-- react核心库 -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <!-- 引入react-dom，用于支持react操作dom -->
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- 生产环境中不建议使用 -->
+  <!-- 用于将jsx转为js -->
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+    <style></style>
+    <!-- 准备容器 -->
+    <div id="test"></div>
+
+    <!-- 此处要写babel -->
+    <script type="text/babel">
+      let data = ["vue", "react", "webpack"];
+      // 创建虚拟dom
+      const VDOM = // 此处不需要引号，不是字符串
+        (
+          <div>
+            <h1>前端</h1>
+            <ul>
+              <li>vue</li>
+              <li>react</li>
+            </ul>
+          </div>
+        );
+      // 渲染虚拟dom到页面
+      ReactDOM.render(VDOM, document.querySelector("#test"));
+    </script>
+  </body>
+</html>
